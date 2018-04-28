@@ -1,0 +1,94 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LoadLevelFromImage : MonoBehaviour
+{
+
+	public Texture2D levelTexture;
+
+	/* Color to GameObject map
+	 * red: mag asteroid
+	 * green: checkpoint
+	 * blue: grav field (not implemented yet)
+	 * black: asteroid
+	 * white: idk
+	 */
+
+	public GameObject magAsteroid;
+	public GameObject checkpoint;
+	public GameObject asteroid;
+
+	private Transform asteroidContainer;
+	private Transform checkpointContainer;
+	private Transform magAsteroidContainer;
+
+
+	// Set up colors as vectors so that the distance calculation is easier and lazier
+	private Vector4 red = new Vector4(1, 0, 0, 1);
+	private Vector4 green = new Vector4(0, 1, 0, 1);
+	private Vector4 blue = new Vector4(0, 0, 1, 1);
+	private Vector4 black = new Vector4(0, 0, 0, 1);
+	private Vector4 white = new Vector4(1, 1, 1, 1);
+
+	// Use this for initialization
+	void Start()
+	{
+		asteroidContainer = GameObject.Find("Asteroids").transform;
+		checkpointContainer = GameObject.Find("Checkpoints").transform;
+		magAsteroidContainer = GameObject.Find("MagAsteroids").transform;
+
+		Debug.Log("Width: " + levelTexture.width + ", Height: " + levelTexture.height);
+		/*
+		Debug.Log("(0,0): " + levelTexture.GetPixel(0, 0));
+		Debug.Log("(1,0): " + levelTexture.GetPixel(1, 0));
+		Debug.Log("(2,0): " + levelTexture.GetPixel(2, 0));
+		Debug.Log("(3,0): " + levelTexture.GetPixel(3, 0));
+		Debug.Log("(4,0): " + levelTexture.GetPixel(4, 0));
+		*/
+
+		int width = 0;
+		int height = 0;
+
+		width = levelTexture.width;
+		height = levelTexture.height;
+
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
+				Color read = levelTexture.GetPixel(i, j);
+
+				// check color distance to prefab templates
+				Vector4 pixelColor = new Vector4(read.r, read.g, read.b, read.a);
+
+				//Debug.Log("(" + i + "," + j + "): " + read);
+
+				if (Vector4.Distance(pixelColor, red) < 0.01) {
+					Debug.Log("(" + i + "," + j + "): is red");
+					Instantiate(magAsteroid, new Vector3(i, j, 0), new Quaternion(0, 0, 0, 0), magAsteroidContainer);
+				}
+				if (Vector4.Distance(pixelColor, green) < 0.01) {
+					Debug.Log("(" + i + "," + j + "): is green");
+					Instantiate(checkpoint, new Vector3(i, j, 0), new Quaternion(0, 0, 0, 0), checkpointContainer);
+				}
+				if (Vector4.Distance(pixelColor, blue) < 0.01) {
+					Debug.Log("(" + i + "," + j + "): is blue");
+				}
+				if (Vector4.Distance(pixelColor, black) < 0.01) {
+					Debug.Log("(" + i + "," + j + "): is black");
+					Instantiate(asteroid, new Vector3(i, j, 0), new Quaternion(0, 0, 0, 0), asteroidContainer);
+				}
+				if (Vector4.Distance(pixelColor, white) < 0.01) {
+					Debug.Log("(" + i + "," + j + "): is white");
+				}
+
+			}
+		}
+
+	}
+	
+	// Update is called once per frame
+	void Update()
+	{
+		
+	}
+}

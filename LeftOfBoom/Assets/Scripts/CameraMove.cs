@@ -1,0 +1,78 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraMove : MonoBehaviour
+{
+	private Vector3 OldPosition;
+	private Vector3 Origin;
+	private Vector3 Difference;
+
+	public float panSpeed = 10f;
+	public float autoMoveDuration = 4f;
+
+	private bool currentlyDragging = false;
+	public bool isMoving = false;
+
+	private Vector3 defaultPosition = new Vector3(0, 0, -10);
+
+	private GameObject player;
+	public bool movementEnabled = true;
+
+	void Start()
+	{
+		player = GameObject.Find("Player");
+	}
+
+	void Update()
+	{
+		if (movementEnabled) {
+			Vector3 playerPosition = player.transform.position;
+			playerPosition.z = defaultPosition.z;
+			playerPosition.x += 2f;
+
+			transform.position = Vector3.Lerp(transform.position, playerPosition, Time.deltaTime * autoMoveDuration);
+		}
+	}
+
+	void LateUpdate()
+	{
+		if (!isMoving) {
+			if (Input.GetMouseButtonDown(2) || (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))) {
+				//Debug.Log("left click");
+				currentlyDragging = true;
+				OldPosition = transform.position;
+				Origin = GetMousePosition();
+			}
+
+			if (currentlyDragging && (Input.GetMouseButton(2) || (Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftShift)))) {
+				Vector3 pos = GetMousePosition() - Origin;
+				transform.position = OldPosition + (-pos * panSpeed);
+			}
+
+			if (Input.GetMouseButtonUp(2) || Input.GetMouseButtonUp(0)) {
+				currentlyDragging = false;
+			}
+
+			if (Input.GetKey(KeyCode.LeftAlt)) {
+				ResetCameraPosition();
+			}
+
+			if (currentlyDragging) {
+				Debug.Log("currentlyDragging");
+			}
+		}
+
+	}
+
+	public void ResetCameraPosition()
+	{
+		//targetPosition = new Vector3(distanceBetweenLevels * levelNumber, defaultPosition.y, defaultPosition.z);
+		isMoving = true;
+	}
+
+	private Vector3 GetMousePosition()
+	{
+		return Camera.main.ScreenToViewportPoint(Input.mousePosition);
+	}
+}
