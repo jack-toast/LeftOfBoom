@@ -7,6 +7,7 @@ public class CameraMove : MonoBehaviour
 	private Vector3 OldPosition;
 	private Vector3 Origin;
 	private Vector3 Difference;
+	public float xOffset = 2f;
 
 	public float panSpeed = 10f;
 	public float autoMoveDuration = 4f;
@@ -29,7 +30,7 @@ public class CameraMove : MonoBehaviour
 		if (movementEnabled) {
 			Vector3 playerPosition = player.transform.position;
 			playerPosition.z = defaultPosition.z;
-			playerPosition.x += 2f;
+			playerPosition.x += xOffset;
 
 			transform.position = Vector3.Lerp(transform.position, playerPosition, Time.deltaTime * autoMoveDuration);
 		}
@@ -59,7 +60,7 @@ public class CameraMove : MonoBehaviour
 			}
 
 			if (currentlyDragging) {
-				Debug.Log("currentlyDragging");
+				//Debug.Log("currentlyDragging");
 			}
 		}
 

@@ -28,14 +28,14 @@ public class PlayerHealth : MonoBehaviour
 			captureMomentum = false;
 			Vector2 momentum2 = rbPlayer.mass * rbPlayer.velocity;
 			float deltaMomentumMagnitude = momentum2.magnitude - playerMomentum.magnitude;
-			Debug.Log("Change in momentum: " + deltaMomentumMagnitude);
+			//Debug.Log("Change in momentum: " + deltaMomentumMagnitude);
 			playerHealth -= Mathf.Abs(deltaMomentumMagnitude * 3);
 		}
 
 		playerMomentum = rbPlayer.mass * rbPlayer.velocity;
 
 		if (playerHealth < minHealth) {
-			Debug.Log("rip");
+			//Debug.Log("rip");
 			playerHealth = 0f;
 		}
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CannonControl : MonoBehaviour
 {
-
-	public float outerRadius = 4f;
-	public float innerRadius = 1f;
+	public float chargeStrength = 1f;
+	public float outerRadius = 16f;
+	public float innerRadius = 4f;
 	public GameObject boostParticles;
 
 	private bool charging = false;
@@ -26,6 +26,7 @@ public class CannonControl : MonoBehaviour
 		aimOuter = transform.parent.GetComponentInChildren<AimOuter>();
 		aimArrow = transform.parent.GetComponentInChildren<AimArrow>();
 		rb = transform.GetComponentInParent<Rigidbody2D>();
+
 	}
 
 	// Update is called once per frame
@@ -41,13 +42,13 @@ public class CannonControl : MonoBehaviour
 			if (mouseDistance < outerRadius) {
 				aimOuter.SetColorInBounds();
 				aimArrow.Activate();
-				chargeDirection = transform.position - mousePosition;
+				//chargeDirection = transform.position - mousePosition;
 			} else {
 				aimOuter.SetColorOutOfBounds();
 				aimArrow.Deactivate();
 			}
 
-			if (mouseDistance > outerRadius + 0.5f) {
+			if (mouseDistance > outerRadius + 0.1f) {
 				aimOuter.SetColorOutOfBounds();
 				aimArrow.Deactivate();
 				charging = false;
@@ -66,14 +67,42 @@ public class CannonControl : MonoBehaviour
 
 		if (Input.GetMouseButton(0)) {
 			charging = true;
+			chargeDirection = transform.position - mousePosition;
 		}
 
 		if (!Input.GetMouseButton(0) && charging) {
-			mouseDistance = Mathf.Clamp(mouseDistance, outerRadius, innerRadius);
-			rb.AddForce(chargeDirection.normalized * mouseDistance * 100);
+			mouseDistance = Mathf.Clamp(mouseDistance, innerRadius, outerRadius);
+
+			Vector3 shotForce = chargeDirection.normalized * (200f + 12.5f * Mathf.Pow(mouseDistance - 4f, 2));
+			shotForce = Vector3.ClampMagnitude(shotForce, 1800f);
+
+			//Debug.Log("Force Strength: " + shotForce.magnitude);
+			//Debug.Log ("Distance to Mouse: " + mouseDistance);
+
+			rb.AddForce(shotForce);
 			charging = false;
 			GameObject particles = Instantiate(boostParticles, transform);
 			particles.transform.parent = null;
+			Destroy(particles, 2f);
+
+			Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, 14f);
+
+
+
+			foreach (Collider2D item in nearbyObjects) {
+				if (item.CompareTag("Asteroid") || item.CompareTag("MagneticAsteroid")) {
+					// Check to see if item is within the blast cone.
+					Vector3 itemToCannon = item.transform.position - transform.position;
+
+					float angleBetween = Vector3.Angle(itemToCannon, -1f * transform.right);
+
+					if (item.transform.parent.name != "Player" && angleBetween < 45f) {
+						Vector3 diff = item.transform.position - transform.position;
+						item.attachedRigidbody.AddForce(diff.normalized * chargeStrength);
+					}
+				}
+			}
+
 			return;
 		}
 

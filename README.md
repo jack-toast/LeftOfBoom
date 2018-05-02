@@ -1,5 +1,27 @@
 # Left of Boom repository
 
+## Milestone 2 notes (Apr. 30th 2018):
+1. Finalized art: I have made a significant effort in terms of art for the player's ship. For this I modeled the ship in Cinema 4D and modeled the cannon in Fusion 360. For the final milestone, I hope to have modeled the ship in Fusion 360 as well.
+
+2. Working level: I have made it so that you can make a level by simply supplying a PNG image to the SceneController. I have created a few levels for the game because of this simplicity.
+
+3. Level Configuration: The SceneController holds my *LoadAsteroidsFromImage.cs* script. This script generates the level according the image provided.
+
+4. Physics and colliders:  Currently, all of the game objects are represented by spheres, so the collision system is simplified. I may change this in the future, but it works for now. If you point the cannon towards an asteroid and shoot, the asteroid will be pushed away. You will notice that this only works when asteroid is within a sort of cone or area of effect.
+
+5. Reaction to collisions: The player's health will decrease when it collides with an asteroid. This decrease is proportional to the momentum lost in the exchange. The player's health is shown via the health bar and can be replenished by colliding with a checkpoint. Speaking of the checkpoints, you'll see that a counter increments whenever you collide with a checkpoint (trigger, not collider, but whatever).
+
+6. Player input: The player input works just as it did before. Aim with your mouse and rotate with A and D.
+
+7. Enemy AI: If moving slowly towards the player counts as AI, then the magnetic asteroids have AI functionality. Enemy ships are not part of this game in its current form or in my current vision for the game. I may implement this in the future, but given that the game focuses on your isolation, this is unlikely.
+
+
+### Milestone 2 Achievements!:
+
+**Reading from file:** As I talked about above, I spawn the asteroids and magnetic asteroids from an image called Level1.png. This image has a white background with black and red markings on it. The red markings denote where magnetic asteroids should spawn. The black markings denote where the regular asteroids should spawn. This image is sized at 512 x 512, but this size should not matter. Please note that one pixel corresponds to a distance unit in Unity.
+
+**Level up!**: I have made a second level. I can de-spawn and respawn everything, but I haven't figured out the checkpoints sub-system. I will do this before the next checkpoint. 
+
 ## TODO:
 * Destructible asteroids
 * Ammo system
@@ -21,7 +43,10 @@
 * Load obstacles from image
 
 
-Reading the level from an image file:
+### Notes regarding loading the level from an image file:
+
+I have since completed this goal. I will keep the notes below for reference or for anyone else who might be interested.
+
 
 Look further into:
 * https://www.wikiwand.com/en/Tessellation
@@ -33,7 +58,6 @@ Look further into:
 * Python solution: https://www.youtube.com/watch?v=HLUqDIOng80
 
 
-Have a different image for mag asteroids, asteroids, and checkpoints
 
 Pseudo-pseudo code
 ```

@@ -7,6 +7,8 @@ public class PlayerControl : MonoBehaviour
 
 	public Vector3 resetPosition;
 
+	public float rotationTorque = 1f;
+
 	private GameObject sceneController;
 	private Rigidbody2D rb;
 	private PlayerHealth playerHealth;
@@ -25,11 +27,11 @@ public class PlayerControl : MonoBehaviour
 	{
 		// A rotates counter-clockwise
 		if (Input.GetKey(KeyCode.A)) {
-			rb.AddTorque(0.5f);
+			rb.AddTorque(rotationTorque);
 		}
 		// D rotates clockwise
 		if (Input.GetKey(KeyCode.D)) {
-			rb.AddTorque(-0.5f);
+			rb.AddTorque(-rotationTorque);
 		}
 	}
 
@@ -43,7 +45,7 @@ public class PlayerControl : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		Debug.Log("[CheckpointTrigger] OnTriggerEnter");
+		//Debug.Log("[CheckpointTrigger] OnTriggerEnter");
 		if (col.gameObject.CompareTag("Checkpoint")) {
 			sceneController.GetComponent<SceneControl>().IncrementPuzzleNumber();
 			resetPosition = col.transform.position;
@@ -53,8 +55,6 @@ public class PlayerControl : MonoBehaviour
 			rb.mass = 1f;
 
 			playerHealth.Reset();
-
-
 		}
 	}
 
@@ -62,7 +62,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		GameObject[] magAsteroids = GameObject.FindGameObjectsWithTag("MagneticAsteroid");
 		int numAsteroids = magAsteroids.Length;
-		Debug.Log(numAsteroids.ToString());
+		//Debug.Log(numAsteroids.ToString());
 		for (int i = 0; i < numAsteroids; i++) {
 			if (magAsteroids[i].transform.parent == transform) {
 				Destroy(magAsteroids[i]);
