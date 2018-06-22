@@ -1,7 +1,5 @@
 # Left of Boom repository
 
-### When loading, need to go to the correct level.
-
 
 ## **Mandatory functionality**
 * Game Save Data
