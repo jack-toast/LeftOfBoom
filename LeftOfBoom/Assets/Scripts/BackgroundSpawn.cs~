@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BackgroundSpawn : MonoBehaviour
+{
+	
+	public GameObject spawnObject;
+	public float spacing;
+
+
+	// Use this for initialization
+	void Start()
+	{
+		
+	}
+	
+	// Update is called once per frame
+	void Update()
+	{
+		
+	}
+}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
+	public float scrollSpeed = 10f;
 	private Vector3 OldPosition;
 	private Vector3 Origin;
 	private Vector3 Difference;
@@ -58,6 +59,13 @@ public class CameraMove : MonoBehaviour
 			if (Input.GetKey(KeyCode.LeftAlt)) {
 				ResetCameraPosition();
 			}
+
+			float orthographicSize = GetComponent<Camera>().orthographicSize + (Input.GetAxis("Mouse ScrollWheel") * -scrollSpeed);
+
+			orthographicSize = Mathf.Clamp(orthographicSize, 5, 30);
+
+			GetComponent<Camera>().orthographicSize = orthographicSize;
+			
 
 			if (currentlyDragging) {
 				//Debug.Log("currentlyDragging");

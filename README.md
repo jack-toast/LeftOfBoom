@@ -1,5 +1,80 @@
 # Left of Boom repository
 
+### When loading, need to go to the correct level.
+
+
+## **Mandatory functionality**
+* Game Save Data
+  * Where does it save the files?
+* Behavior Tree based AI
+
+
+## Feedback from play testers
+* "Make the orange balls more spread out. Touching 1 essentially touches all the others so you just are done instantly"
+* "Contact with too many orange circles caused the game to freeze for a minute"
+* "Have say a tutorial explaining mechanics and goals."
+* "Add level transitions when the player completes a level."
+* "movement felt slower than I'd prefer"
+* make the goal clearer
+* "too many obstacles"
+* "Was tough to slow down and touching orange balls pretty much meant a restart"
+* "More stuff going on maybe?"
+* "I think consistent movement would be better than burst movement, it was tricky."
+* "Lack of clear goal"
+* "Give instructions on goal."
+
+
+## TODO
+* Have the cannon shoot a projectile that splits asteroids and enemies.
+* Alter texture of windows to glow when shooting
+* Magnetic asteroids shouldn't just clump up like they do.
+* Show level stats at end of levels
+* Destructible asteroids
+* Ammo system
+* Show wear on ship
+
+
+## TO-DONE:
+* remove the PointToCheckpoint when you reach end of level.
+* Implement some sort of AI system
+* End of game screen
+* Two more levels
+* Consequence for low health
+* Behavior tree for the AI
+* pause menu
+* Projectiles need to do damage
+* Screen shake with cannon
+* Screen shake on impact
+* Have the reset functionality reset the position of the magnetic asteroids
+* Cannon particle effect
+* Ship health
+  * Damage taken scales with momentum exchange of collision
+* Load obstacles from image
+
+
+## Milestone 3 related things.
+
+# ***This game was built using Unity 2018***
+
+**Finalize game mechanics:** It's all in there. Just click around and have fun.
+
+**Finalize all art in your game.** All of the art is finalized. The ship got an overhaul and the asteroids were reduced to more attractive primitive shapes.
+
+**Complete your animations:** N/A I added a boat load of particle effects in their place.
+
+**Add Sounds and music:** There is music and sound effects now. The artists are credited.
+
+**Create transitions between scenes:** I added a nice "loading" overlay between levels.
+
+**Complete Additional levels:** I added 3 more levels to the game.
+
+**Add AI as needed:** The enemies (white blobs) automatically attack the player with a rudimentary AI system.
+
+**Use coroutines:** The screen shake and enemy shooting use coroutines.
+
+**Have a usable UI in your game:** The UI works. Hit ESC to pause.
+
+
 ## Milestone 2 notes (Apr. 30th 2018):
 1. Finalized art: I have made a significant effort in terms of art for the player's ship. For this I modeled the ship in Cinema 4D and modeled the cannon in Fusion 360. For the final milestone, I hope to have modeled the ship in Fusion 360 as well.
 
@@ -20,27 +95,9 @@
 
 **Reading from file:** As I talked about above, I spawn the asteroids and magnetic asteroids from an image called Level1.png. This image has a white background with black and red markings on it. The red markings denote where magnetic asteroids should spawn. The black markings denote where the regular asteroids should spawn. This image is sized at 512 x 512, but this size should not matter. Please note that one pixel corresponds to a distance unit in Unity.
 
-**Level up!**: I have made a second level. I can de-spawn and respawn everything, but I haven't figured out the checkpoints sub-system. I will do this before the next checkpoint. 
-
-## TODO:
-* Destructible asteroids
-* Ammo system
-* Show wear on ship
-* Time warp more fluid
-* Implement non linear drag: Makes it feel more 'snappy'
-* Loading from image:
-  * not all aligned to grid
-  * find center of mass of pixels, put larger asteroid there
-  * sort of a packing solution for this... no idea where to start
-  * talk to Chris about it.
+**Level up!**: I have made a second level. I can de-spawn and respawn everything, but I haven't figured out the checkpoints sub-system. I will do this before the next checkpoint.
 
 
-## TO-DONE:
-* Have the reset functionality reset the position of the magnetic asteroids
-* Cannon particle effect
-* Ship health
-  * Damage taken scales with momentum exchange of collision
-* Load obstacles from image
 
 
 ### Notes regarding loading the level from an image file:

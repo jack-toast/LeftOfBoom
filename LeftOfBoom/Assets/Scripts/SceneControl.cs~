@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
 	public GameObject magneticAsteroidPrefab;
 	public int currentPuzzle;
-	public int levelNumber = 1;
-
+	public string nextLevel;
+	public GameObject loadingOverlay;
+	public GameObject levelCompleteText;
+	public GameObject nextLevelButton;
 	private int numberPuzzles;
-
 	private GameObject player;
-
 	private List<AsteroidStruct> magAsteroids = new List<AsteroidStruct>();
-
 	private bool levelComplete;
 
 
@@ -31,34 +31,38 @@ public class SceneControl : MonoBehaviour
 
 		SaveMagAsteroidPositions();// Save the positions of all the magnetic asteroids
 		ResetAsteroids();
+
+
+
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Application.Quit();	
-		}
-
 		if (Input.GetKeyDown(KeyCode.R)) {
 			Reset();
 		}
 
 		if (currentPuzzle >= numberPuzzles) {
-			levelComplete = true;
 
-			if (GameObject.Find("NextLevelButton") != null) {
-				GameObject.Find("NextLevelButton").GetComponent<Button>().enabled = true;
+			if (!levelComplete) {
+				GameObject canvas = GameObject.FindWithTag("Canvas");
+
+				if (canvas == null) {
+					return;
+				}
+
+				Instantiate(levelCompleteText, canvas.transform);
+
+				if (GameObject.FindWithTag("NextLevelButton") == null) {
+					Instantiate(nextLevelButton, canvas.transform);
+				} 
 
 			}
 
-		}
+			levelComplete = true;
 
-		if (levelComplete) {
-			Debug.Log("Level Complete! WOO!");
 		}
-
 	}
 
 	void Reset()
@@ -86,7 +90,7 @@ public class SceneControl : MonoBehaviour
 			Vector3 spawnPosition = new Vector3(item.position.x, item.position.y, 0);
 			GameObject blep = Instantiate(magneticAsteroidPrefab, spawnPosition, new Quaternion(0, 0, 0, 0), magneticAsteroidContainer).gameObject;			
 			blep.transform.localScale = new Vector3(item.radius * 2.5f, item.radius * 2.5f, 1);
-
+			blep.transform.Rotate(0f, 0f, Random.Range(0f, 360f));
 		}
 
 	}
@@ -134,20 +138,9 @@ public class SceneControl : MonoBehaviour
 
 	public void LoadNextLevel()
 	{
-		DestroyAsteroids();
-		DestroyMagneticAsteroids();
+		// Display some sort of loading screen
+		Instantiate(loadingOverlay, GameObject.Find("Canvas").transform);
 
-		currentPuzzle = 0;
-		levelComplete = false;
-		GetComponent<LoadAsteroidsFromImage>().LoadLevel(levelNumber + 1);
-		GameObject.Find("NextLevelButton").GetComponent<Button>().enabled = false;
-
-		SaveMagAsteroidPositions();
-
-		player.transform.position = new Vector3(0f, 0f, 0f);
-		player.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-
-		player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-		player.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+		SceneManager.LoadScene(nextLevel);
 	}
 }

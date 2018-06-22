@@ -19,15 +19,13 @@ public class AsteroidCollision : MonoBehaviour
 	{
 		if (col.gameObject.tag == "MagneticAsteroid") {
 			Physics2D.IgnoreCollision(col.collider.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-			Destroy(col.collider.GetComponent<Rigidbody2D>());
+
 			col.transform.parent = transform;
 
-			float newMass = rb.mass + asteroidMass;
-
-			Debug.Log(newMass.ToString());
-
+			float newMass = rb.mass + (col.collider.GetComponent<Rigidbody2D>().mass) / 3f;
 			rb.mass = newMass;
-
+			Destroy(col.collider.GetComponent<Rigidbody2D>());
+			Destroy(col.transform.GetComponent<MagAttraction>());
 		}
 	}
 }

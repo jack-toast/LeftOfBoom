@@ -6,8 +6,11 @@ public class PlayerControl : MonoBehaviour
 {
 
 	public Vector3 resetPosition;
+	public float resetMass = 40f;
 
-	public float rotationTorque = 1f;
+	public float rotationTorque = 200f;
+
+	public GameObject checkpointExplosionEffect;
 
 	private GameObject sceneController;
 	private Rigidbody2D rb;
@@ -40,7 +43,7 @@ public class PlayerControl : MonoBehaviour
 		transform.position = resetPosition;
 		rb.velocity = new Vector3(0, 0, 0);
 		rb.angularVelocity = 0f;
-		rb.mass = 1f;
+		rb.mass = resetMass;
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -49,12 +52,20 @@ public class PlayerControl : MonoBehaviour
 		if (col.gameObject.CompareTag("Checkpoint")) {
 			sceneController.GetComponent<SceneControl>().IncrementPuzzleNumber();
 			resetPosition = col.transform.position;
-			Destroy(col.gameObject);
 
 			DestroyAttachedAsteroids();
-			rb.mass = 1f;
+			rb.mass = resetMass;
 
 			playerHealth.Reset();
+
+			// spawn in a checkpoint explosion effect
+			GameObject checkPointExplosion = Instantiate(checkpointExplosionEffect, col.transform.position, col.transform.rotation).gameObject;
+
+			Destroy(checkPointExplosion, 3);
+
+			// Destroy the checkpoint game object
+			Destroy(col.GetComponent<Collider2D>());
+			Destroy(col.gameObject, 0.3f);
 		}
 	}
 

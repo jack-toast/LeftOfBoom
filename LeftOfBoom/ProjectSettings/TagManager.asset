@@ -8,6 +8,13 @@ TagManager:
   - SceneController
   - Asteroid
   - MagneticAsteroid
+  - EnemyShip
+  - Projectile
+  - PauseMenu
+  - MusicPlayer
+  - GameSaveModel
+  - Canvas
+  - NextLevelButton
   layers:
   - Default
   - TransparentFX
@@ -17,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessingLayer1
   - 
   - 
   - 

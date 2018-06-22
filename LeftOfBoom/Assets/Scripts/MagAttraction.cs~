@@ -5,9 +5,9 @@ using UnityEngine;
 public class MagAttraction : MonoBehaviour
 {
 
-	public float activationDistance = 5f;
-	public float maxSpeed = 1f;
-	public float attractionForce = 5f;
+	public float activationDistance = 15f;
+	public float maxSpeed = 2f;
+	public float attractionForce = 10f;
 	private Rigidbody2D rb;
 	private Transform player;
 	private float distToPlayer;
@@ -30,11 +30,13 @@ public class MagAttraction : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		/*
 		if (transform.GetComponent<Rigidbody2D>() == null) {
 			//Debug.Log("RB is null (attached to player)");
 			Destroy(this);
 			return;
 		}
+		*/
 
 		distToPlayer = Vector3.Distance(transform.position, player.position);
 

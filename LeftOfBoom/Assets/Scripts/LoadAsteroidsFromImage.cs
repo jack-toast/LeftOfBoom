@@ -18,10 +18,7 @@ struct AsteroidStruct
 
 public class LoadAsteroidsFromImage : MonoBehaviour
 {
-
-	public Texture2D level1;
-	public Texture2D level2;
-	public Texture2D level3;
+	public Texture2D image;
 	public GameObject asteroidPrefab;
 	public GameObject magAsteroidPrefab;
 
@@ -33,39 +30,17 @@ public class LoadAsteroidsFromImage : MonoBehaviour
 
 	public float magRadius = 1f;
 
-	private Texture2D image;
-
 	private Transform asteroidContainer;
 	private Transform magAsteroidContainer;
 
 	// Use this for initialization
 	void Awake()
 	{
-		image = level1;
-		LoadLevel(1);
+		LoadLevel();
 	}
 
-	public void LoadLevel(int levelNumber)
+	public void LoadLevel()
 	{
-
-		Debug.Log("LoadLevel: " + levelNumber);
-
-		switch (levelNumber) {
-			case 1: 
-				image = level1;
-				break;
-			case 2:
-				image = level2;
-				break;
-			case 3:
-				image = level3;
-				break;
-			default:
-				Debug.Log("you've reached the end");
-				return;
-				break;
-		}
-
 		asteroidContainer = GameObject.Find("Asteroids").transform;
 		magAsteroidContainer = GameObject.Find("MagneticAsteroids").transform;
 

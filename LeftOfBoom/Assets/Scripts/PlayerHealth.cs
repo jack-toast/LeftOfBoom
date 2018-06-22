@@ -7,36 +7,43 @@ public class PlayerHealth : MonoBehaviour
 
 	public float playerHealth = 100f;
 	public float maxHealth = 100f;
-	public float minHealth = 0.001f;
+	public AudioClip damageSound;
 
 	private Rigidbody2D rbPlayer;
 
 	private bool captureMomentum = false;
 	private Vector2 playerMomentum = new Vector2(0f, 0f);
+	private AudioSource source;
+
 
 	// Use this for initialization
 	void Start()
 	{
 		rbPlayer = GetComponent<Rigidbody2D>();
+		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
 	{
-		
 		if (captureMomentum) {
 			captureMomentum = false;
 			Vector2 momentum2 = rbPlayer.mass * rbPlayer.velocity;
 			float deltaMomentumMagnitude = momentum2.magnitude - playerMomentum.magnitude;
-			//Debug.Log("Change in momentum: " + deltaMomentumMagnitude);
-			playerHealth -= Mathf.Abs(deltaMomentumMagnitude * 3);
+			playerHealth -= Mathf.Abs(deltaMomentumMagnitude / 20f);
+			float soundLevel = Mathf.Abs(deltaMomentumMagnitude / 50f);
+			soundLevel = Mathf.Clamp(deltaMomentumMagnitude, 0.3f, 1f);
+			if (!source.isPlaying) {
+				source.PlayOneShot(damageSound, soundLevel);
+			}
+
 		}
 
 		playerMomentum = rbPlayer.mass * rbPlayer.velocity;
 
-		if (playerHealth < minHealth) {
-			//Debug.Log("rip");
-			playerHealth = 0f;
+		if (playerHealth < 0f) {
+			transform.GetComponent<PlayerControl>().Reset();
+			Reset();
 		}
 
 	}
@@ -44,7 +51,12 @@ public class PlayerHealth : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.transform.CompareTag("Asteroid")) {
+			
 			captureMomentum = true;
+		} else if (col.transform.CompareTag("Projectile")) {
+			if (Vector3.Distance(col.transform.position, transform.position) < (transform.localScale.x + col.transform.localScale.x)) {
+				captureMomentum = true;
+			}
 		}
 	}
 
@@ -56,6 +68,11 @@ public class PlayerHealth : MonoBehaviour
 	public float GetHealth()
 	{
 		return playerHealth;
+	}
+
+	public void SetHealth(float h)
+	{
+		playerHealth = h;
 	}
 
 }

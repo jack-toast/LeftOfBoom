@@ -5,7 +5,8 @@ using UnityEngine;
 public class TimeWarp : MonoBehaviour
 {
 
-	public float start_timescale = 1;
+	public float timescaleReadout = 1;
+	public float rampSpeed = 10f;
 
 	private bool time_slow_activated = false;
 
@@ -13,12 +14,6 @@ public class TimeWarp : MonoBehaviour
 	void Start()
 	{
 		Time.timeScale = 1;
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
 	}
 
 	void FixedUpdate()
@@ -32,7 +27,7 @@ public class TimeWarp : MonoBehaviour
 		if (time_slow_activated) {
 			Time.timeScale -= Time.timeScale / 10;
 		} else {
-			Time.timeScale *= 2.0f;
+			Time.timeScale = Mathf.SmoothStep (Time.timeScale, 1.0f, Time.fixedDeltaTime * rampSpeed);
 		}
 
 		if (Time.timeScale < 0.0f) {
@@ -42,5 +37,19 @@ public class TimeWarp : MonoBehaviour
 		if (Time.timeScale > 1.0f) {
 			Time.timeScale = 1.0f;
 		}
+
+		timescaleReadout = Time.timeScale;
+
 	}
+
+	public void Pause(){
+		Time.timeScale = 0.0f;
+
+	}
+
+	public void UnPause(){
+		Time.timeScale = 1.0f;
+
+	}
+
 }

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HUDControl : MonoBehaviour
 {
 
+	public GameObject pauseMenu;
+
 	private PlayerHealth playerHealth;
 	private SceneControl sceneControl;
 
@@ -29,8 +31,9 @@ public class HUDControl : MonoBehaviour
 	{
 		// update the health bar
 		float bgWidth = healthGauge.transform.GetComponent<RectTransform>().sizeDelta.x;
+		float bgHeight = healthGauge.transform.GetComponent<RectTransform>().sizeDelta.y;
 		float barWidth = bgWidth * (playerHealth.GetHealth() / playerHealth.maxHealth);
-		healthGauge.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(barWidth, 20);
+		healthGauge.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(barWidth, bgHeight);
 
 		// update the health text
 		healthText.GetComponent<Text>().text = "Health: " + playerHealth.GetHealth().ToString("F1");
@@ -38,5 +41,21 @@ public class HUDControl : MonoBehaviour
 		// update the score
 		score.GetComponent<Text>().text = "Score: " + sceneControl.GetPuzzleNumber();
 
+		// Pause menu control
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+
+			GameObject[] pauseMenus = GameObject.FindGameObjectsWithTag("PauseMenu");
+
+			if (pauseMenus.Length == 0) {
+				// If pause menu disabled, enable the pause menu
+				Instantiate(pauseMenu, transform);
+			} else {
+				// If there are any pause menus, destroy them all!
+				foreach (var item in pauseMenus) {
+					Destroy(item);
+				}
+			}
+		}
 	}
+
 }

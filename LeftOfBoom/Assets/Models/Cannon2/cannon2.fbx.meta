@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: 6ba07f43c47be5140b7c989333e52233
+timeCreated: 1526340556
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body1
+    100002: Body1 1
+    100004: Body1 10
+    100006: Body1 11
+    100008: Body1 2
+    100010: Body1 3
+    100012: Body1 4
+    100014: Body1 5
+    100016: Body1 6
+    100018: Body1 7
+    100020: Body1 8
+    100022: Body1 9
+    100024: //RootNode
+    100026: Component1
+    100028: Component10
+    100030: Component10:1
+    100032: Component11
+    100034: Component11:1
+    100036: Component12
+    100038: Component12:1
+    100040: Component1:1
+    100042: Component2
+    100044: Component2:1
+    100046: Component3
+    100048: Component3:1
+    100050: Component4
+    100052: Component4:1
+    100054: Component5
+    100056: Component5:1
+    100058: Component6
+    100060: Component6:1
+    100062: Component7
+    100064: Component7:1
+    100066: Component8
+    100068: Component8:1
+    100070: Component9
+    100072: Component9:1
+    400000: Body1
+    400002: Body1 1
+    400004: Body1 10
+    400006: Body1 11
+    400008: Body1 2
+    400010: Body1 3
+    400012: Body1 4
+    400014: Body1 5
+    400016: Body1 6
+    400018: Body1 7
+    400020: Body1 8
+    400022: Body1 9
+    400024: //RootNode
+    400026: Component1
+    400028: Component10
+    400030: Component10:1
+    400032: Component11
+    400034: Component11:1
+    400036: Component12
+    400038: Component12:1
+    400040: Component1:1
+    400042: Component2
+    400044: Component2:1
+    400046: Component3
+    400048: Component3:1
+    400050: Component4
+    400052: Component4:1
+    400054: Component5
+    400056: Component5:1
+    400058: Component6
+    400060: Component6:1
+    400062: Component7
+    400064: Component7:1
+    400066: Component8
+    400068: Component8:1
+    400070: Component9
+    400072: Component9:1
+    2100000: No Name
+    2100002: Acetal Resin (White)
+    2100004: Plastic - Translucent Matte (Red)
+    2100006: Plastic - Translucent Matte (Green)
+    2100008: Paek (Beige)
+    2100010: Plastic - Translucent Matte (Yellow)
+    2300000: Body1
+    2300002: Body1 1
+    2300004: Body1 10
+    2300006: Body1 11
+    2300008: Body1 2
+    2300010: Body1 3
+    2300012: Body1 4
+    2300014: Body1 5
+    2300016: Body1 6
+    2300018: Body1 7
+    2300020: Body1 8
+    2300022: Body1 9
+    3300000: Body1
+    3300002: Body1 1
+    3300004: Body1 10
+    3300006: Body1 11
+    3300008: Body1 2
+    3300010: Body1 3
+    3300012: Body1 4
+    3300014: Body1 5
+    3300016: Body1 6
+    3300018: Body1 7
+    3300020: Body1 8
+    3300022: Body1 9
+    4300000: Body1
+    4300002: Body1
+    4300004: Body1
+    4300006: Body1
+    4300008: Body1
+    4300010: Body1
+    4300012: Body1
+    4300014: Body1
+    4300016: Body1
+    4300018: Body1
+    4300020: Body1
+    4300022: Body1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Acetal Resin (White)
+    second: {fileID: 2100000, guid: 34ae490b55089ff43a62b699c6465b54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 4c6221d6ff3807d4bb7c6811078e6ea9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paek (Beige)
+    second: {fileID: 2100000, guid: 07fa150b457827a499c211e5fa41b606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic - Translucent Matte (Green)
+    second: {fileID: 2100000, guid: 60de0e2b51c081347b51961234275b46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic - Translucent Matte (Red)
+    second: {fileID: 2100000, guid: 8b99fb2f0a55fd7469757f65aa666722, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic - Translucent Matte (Yellow)
+    second: {fileID: 2100000, guid: 5cebfc67d91073f46a3056f97209b890, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

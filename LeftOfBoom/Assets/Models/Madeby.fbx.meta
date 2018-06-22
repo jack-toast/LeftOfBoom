@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: e5a395d8cd1d3ea4298be21c338fb624
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 1
+    100002: 2
+    100004: ':'
+    100006: a
+    100008: a.2
+    100010: a.3
+    100012: B
+    100014: 'By:'
+    100016: Cap 1
+    100018: Cap 1.10
+    100020: Cap 1.11
+    100022: Cap 1.12
+    100024: Cap 1.13
+    100026: Cap 1.14
+    100028: Cap 1.15
+    100030: Cap 1.16
+    100032: Cap 1.17
+    100034: Cap 1.18
+    100036: Cap 1.19
+    100038: Cap 1.2
+    100040: Cap 1.3
+    100042: Cap 1.4
+    100044: Cap 1.5
+    100046: Cap 1.6
+    100048: Cap 1.7
+    100050: Cap 1.8
+    100052: Cap 1.9
+    100054: Cap 2
+    100056: Cap 2.10
+    100058: Cap 2.11
+    100060: Cap 2.12
+    100062: Cap 2.13
+    100064: Cap 2.14
+    100066: Cap 2.15
+    100068: Cap 2.16
+    100070: Cap 2.17
+    100072: Cap 2.18
+    100074: Cap 2.19
+    100076: Cap 2.2
+    100078: Cap 2.3
+    100080: Cap 2.4
+    100082: Cap 2.5
+    100084: Cap 2.6
+    100086: Cap 2.7
+    100088: Cap 2.8
+    100090: Cap 2.9
+    100092: d
+    100094: e
+    100096: h
+    100098: J
+    100100: Jonathan
+    100102: M
+    100104: Made
+    100106: //RootNode
+    100108: n
+    100110: n.2
+    100112: o
+    100114: o.2
+    100116: s
+    100118: t
+    100120: t.2
+    100122: Text
+    100124: Y
+    100126: y
+    100128: Yost
+    400000: 1
+    400002: 2
+    400004: ':'
+    400006: a
+    400008: a.2
+    400010: a.3
+    400012: B
+    400014: 'By:'
+    400016: Cap 1
+    400018: Cap 1.10
+    400020: Cap 1.11
+    400022: Cap 1.12
+    400024: Cap 1.13
+    400026: Cap 1.14
+    400028: Cap 1.15
+    400030: Cap 1.16
+    400032: Cap 1.17
+    400034: Cap 1.18
+    400036: Cap 1.19
+    400038: Cap 1.2
+    400040: Cap 1.3
+    400042: Cap 1.4
+    400044: Cap 1.5
+    400046: Cap 1.6
+    400048: Cap 1.7
+    400050: Cap 1.8
+    400052: Cap 1.9
+    400054: Cap 2
+    400056: Cap 2.10
+    400058: Cap 2.11
+    400060: Cap 2.12
+    400062: Cap 2.13
+    400064: Cap 2.14
+    400066: Cap 2.15
+    400068: Cap 2.16
+    400070: Cap 2.17
+    400072: Cap 2.18
+    400074: Cap 2.19
+    400076: Cap 2.2
+    400078: Cap 2.3
+    400080: Cap 2.4
+    400082: Cap 2.5
+    400084: Cap 2.6
+    400086: Cap 2.7
+    400088: Cap 2.8
+    400090: Cap 2.9
+    400092: d
+    400094: e
+    400096: h
+    400098: J
+    400100: Jonathan
+    400102: M
+    400104: Made
+    400106: //RootNode
+    400108: n
+    400110: n.2
+    400112: o
+    400114: o.2
+    400116: s
+    400118: t
+    400120: t.2
+    400122: Text
+    400124: Y
+    400126: y
+    400128: Yost
+    2100000: No Name
+    2300000: ':'
+    2300002: a
+    2300004: a.2
+    2300006: a.3
+    2300008: B
+    2300010: Cap 1
+    2300012: Cap 1.10
+    2300014: Cap 1.11
+    2300016: Cap 1.12
+    2300018: Cap 1.13
+    2300020: Cap 1.14
+    2300022: Cap 1.15
+    2300024: Cap 1.16
+    2300026: Cap 1.17
+    2300028: Cap 1.18
+    2300030: Cap 1.19
+    2300032: Cap 1.2
+    2300034: Cap 1.3
+    2300036: Cap 1.4
+    2300038: Cap 1.5
+    2300040: Cap 1.6
+    2300042: Cap 1.7
+    2300044: Cap 1.8
+    2300046: Cap 1.9
+    2300048: Cap 2
+    2300050: Cap 2.10
+    2300052: Cap 2.11
+    2300054: Cap 2.12
+    2300056: Cap 2.13
+    2300058: Cap 2.14
+    2300060: Cap 2.15
+    2300062: Cap 2.16
+    2300064: Cap 2.17
+    2300066: Cap 2.18
+    2300068: Cap 2.19
+    2300070: Cap 2.2
+    2300072: Cap 2.3
+    2300074: Cap 2.4
+    2300076: Cap 2.5
+    2300078: Cap 2.6
+    2300080: Cap 2.7
+    2300082: Cap 2.8
+    2300084: Cap 2.9
+    2300086: d
+    2300088: e
+    2300090: h
+    2300092: J
+    2300094: M
+    2300096: n
+    2300098: n.2
+    2300100: o
+    2300102: o.2
+    2300104: s
+    2300106: t
+    2300108: t.2
+    2300110: Y
+    2300112: y
+    3300000: ':'
+    3300002: a
+    3300004: a.2
+    3300006: a.3
+    3300008: B
+    3300010: Cap 1
+    3300012: Cap 1.10
+    3300014: Cap 1.11
+    3300016: Cap 1.12
+    3300018: Cap 1.13
+    3300020: Cap 1.14
+    3300022: Cap 1.15
+    3300024: Cap 1.16
+    3300026: Cap 1.17
+    3300028: Cap 1.18
+    3300030: Cap 1.19
+    3300032: Cap 1.2
+    3300034: Cap 1.3
+    3300036: Cap 1.4
+    3300038: Cap 1.5
+    3300040: Cap 1.6
+    3300042: Cap 1.7
+    3300044: Cap 1.8
+    3300046: Cap 1.9
+    3300048: Cap 2
+    3300050: Cap 2.10
+    3300052: Cap 2.11
+    3300054: Cap 2.12
+    3300056: Cap 2.13
+    3300058: Cap 2.14
+    3300060: Cap 2.15
+    3300062: Cap 2.16
+    3300064: Cap 2.17
+    3300066: Cap 2.18
+    3300068: Cap 2.19
+    3300070: Cap 2.2
+    3300072: Cap 2.3
+    3300074: Cap 2.4
+    3300076: Cap 2.5
+    3300078: Cap 2.6
+    3300080: Cap 2.7
+    3300082: Cap 2.8
+    3300084: Cap 2.9
+    3300086: d
+    3300088: e
+    3300090: h
+    3300092: J
+    3300094: M
+    3300096: n
+    3300098: n.2
+    3300100: o
+    3300102: o.2
+    3300104: s
+    3300106: t
+    3300108: t.2
+    3300110: Y
+    3300112: y
+    4300000: M
+    4300002: Cap 1
+    4300004: Cap 2
+    4300006: a
+    4300008: Cap 1.2
+    4300010: Cap 2.2
+    4300012: d
+    4300014: Cap 1.3
+    4300016: Cap 2.3
+    4300018: e
+    4300020: Cap 1.4
+    4300022: Cap 2.4
+    4300024: B
+    4300026: Cap 1.5
+    4300028: Cap 2.5
+    4300030: y
+    4300032: Cap 1.6
+    4300034: Cap 2.6
+    4300036: ':'
+    4300038: Cap 1.7
+    4300040: Cap 2.7
+    4300042: J
+    4300044: Cap 1.8
+    4300046: Cap 2.8
+    4300048: o
+    4300050: Cap 1.9
+    4300052: Cap 2.9
+    4300054: n
+    4300056: Cap 1.10
+    4300058: Cap 2.10
+    4300060: a.2
+    4300062: Cap 1.11
+    4300064: Cap 2.11
+    4300066: t
+    4300068: Cap 1.12
+    4300070: Cap 2.12
+    4300072: h
+    4300074: Cap 1.13
+    4300076: Cap 2.13
+    4300078: a.3
+    4300080: Cap 1.14
+    4300082: Cap 2.14
+    4300084: n.2
+    4300086: Cap 1.15
+    4300088: Cap 2.15
+    4300090: Y
+    4300092: Cap 1.16
+    4300094: Cap 2.16
+    4300096: o.2
+    4300098: Cap 1.17
+    4300100: Cap 2.17
+    4300102: s
+    4300104: Cap 1.18
+    4300106: Cap 2.18
+    4300108: t.2
+    4300110: Cap 1.19
+    4300112: Cap 2.19
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: ace8f974b597f9340bebd97efb1fd359, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
